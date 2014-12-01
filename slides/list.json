@@ -1,1 +1,13 @@
-["index.md"]
+[
+    "index.html",
+    "goal.html",
+    "motivation.html",
+    [
+        "system-overview.html",
+        "filter-by-attributes.html"
+    ],
+    "data-sources.html",
+    "parcel-data.html",
+    "business-data.html",
+    "census-data.html"
+]
