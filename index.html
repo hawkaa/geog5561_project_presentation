@@ -260,11 +260,29 @@
         <script>
           $(document).ready(function() {
             $('#slider-income').noUiSlider({
-              start: [0, 100000],
+              start: [20000, 80000],
               connect: true,
               range: {
                 'min': 0,
                 'max': 100000
+              }
+            });
+            $('#slider-age').noUiSlider({
+              start: [30, 45],
+              connect: true,
+              step: 1,
+              range: {
+                'min': 0,
+                'max': 100
+              }
+            });
+            $('#slider-edu').noUiSlider({
+              start: [1, 7],
+              connect: true,
+              step: 1,
+              range: {
+                'min': 0,
+                'max': 10
               }
             });
             $('#slider-income').Link('lower').to(function(Amount) {
@@ -288,6 +306,20 @@
               decPart = (decPart + '00').substr(0,2);
 
               $('#slider-income-to').val('$' + intPart + DecimalSeparator + decPart);
+            });
+            
+            $('#slider-age').Link('upper').to(function(val) {
+              $("#slider-age-to").val(parseInt(val) + " years"); 
+            });
+            $('#slider-age').Link('lower').to(function(val) {
+              $("#slider-age-from").val(parseInt(val) + " years"); 
+            });
+            
+            $('#slider-edu').Link('upper').to(function(val) {
+              $("#slider-edu-to").val(parseInt(val) + " years"); 
+            });
+            $('#slider-edu').Link('lower').to(function(val) {
+              $("#slider-edu-from").val(parseInt(val) + " years"); 
             });
           });
         </script>
