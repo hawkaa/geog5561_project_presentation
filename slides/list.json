@@ -6,8 +6,16 @@
         "system-overview.html",
         "filter-by-attributes.html"
     ],
-    "data-sources.html",
-    "parcel-data.html",
-    "business-data.html",
-    "census-data.html"
+    [
+        "data-sources.html",
+        "parcel-data.html",
+        "census-data.html",
+        "isp-competitor-data.html",
+        "network-infrastructure-documentation.html"
+    ],
+    "preparing-data-for-analysis.html",
+    [
+        "potential.html",
+        "profitability.html"
+    ]
 ]
