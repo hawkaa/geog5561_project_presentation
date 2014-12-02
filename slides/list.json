@@ -27,9 +27,11 @@
         "filtering-potential.html",
         "competitors.html",
         "proximity-to-existing-network-infrastructure.html",
+        "customer-clustering.html",
         "customer-clustering-heatmap.html",
         "customer-clustering-mathematical-analysis.html"
     ],
+    "system-review.html",
     "questions.html",
     "thank-you.html"
 ]
