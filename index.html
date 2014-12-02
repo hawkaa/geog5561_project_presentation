@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
     
         <link rel="stylesheet" href="bower_components/reveal.js/css/theme/beige.css" id="theme">
+
+        <link rel="stylesheet" href="bower_components/nouislider/distribute/jquery.nouislider.min.css" />
     
 
         <!-- For syntax highlighting -->
@@ -140,12 +142,84 @@
                         </section>
                     
                 
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/data-analysis.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/brain.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/data-presentation.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/filtering-potential.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/competitors.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/proximity-to-existing-network-infrastructure.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/customer-clustering-heatmap.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/customer-clustering-mathematical-analysis.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-html="slides/questions.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/thank-you.html"></section>
+
+
+                    
+                    
+                
             </div>
 
         </div>
 
         <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
         <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
         <script>
             // Configure Reveal
             // Full list of configuration options available here:
@@ -173,6 +247,49 @@
                     { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
                 ]
             });
+        </script>
+        
+        <style>
+          .slider {
+            width: 50%;
+          }
+          .noUi-background {
+            background-color: #AAAAAA;
+          }
+        </style>
+        <script>
+          $(document).ready(function() {
+            $('#slider-income').noUiSlider({
+              start: [0, 100000],
+              connect: true,
+              range: {
+                'min': 0,
+                'max': 100000
+              }
+            });
+            $('#slider-income').Link('lower').to(function(Amount) {
+              var DecimalSeparator = Number("1.2").toLocaleString().substr(1,1);
+
+              var AmountWithCommas = Amount.toLocaleString();
+              var arParts = String(AmountWithCommas).split(DecimalSeparator);
+              var intPart = arParts[0];
+              var decPart = (arParts.length > 1 ? arParts[1] : '');
+              decPart = (decPart + '00').substr(0,2);
+
+              $('#slider-income-from').val('$' + intPart + DecimalSeparator + decPart);
+            });
+            $('#slider-income').Link('upper').to(function(Amount) {
+              var DecimalSeparator = Number("1.2").toLocaleString().substr(1,1);
+
+              var AmountWithCommas = Amount.toLocaleString();
+              var arParts = String(AmountWithCommas).split(DecimalSeparator);
+              var intPart = arParts[0];
+              var decPart = (arParts.length > 1 ? arParts[1] : '');
+              decPart = (decPart + '00').substr(0,2);
+
+              $('#slider-income-to').val('$' + intPart + DecimalSeparator + decPart);
+            });
+          });
         </script>
 
     </body>

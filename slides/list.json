@@ -17,5 +17,19 @@
     [
         "potential.html",
         "profitability.html"
-    ]
+    ],
+    [
+        "data-analysis.html",
+        "brain.html"
+    ],
+    [
+        "data-presentation.html",
+        "filtering-potential.html",
+        "competitors.html",
+        "proximity-to-existing-network-infrastructure.html",
+        "customer-clustering-heatmap.html",
+        "customer-clustering-mathematical-analysis.html"
+    ],
+    "questions.html",
+    "thank-you.html"
 ]
