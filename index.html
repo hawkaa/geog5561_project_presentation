@@ -258,7 +258,7 @@
           }
         </style>
         <script>
-          $(document).ready(function() {
+          setTimeout(function() {
             $('#slider-income').noUiSlider({
               start: [20000, 80000],
               connect: true,
@@ -321,7 +321,7 @@
             $('#slider-edu').Link('lower').to(function(val) {
               $("#slider-edu-from").val(parseInt(val) + " years"); 
             });
-          });
+          }, 3000);
         </script>
 
     </body>
